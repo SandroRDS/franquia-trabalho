@@ -1,7 +1,6 @@
 package modelo;
 
 public class Pedido {
-
 	private int qtdProduto;
 	private String dataCompra;
 	private Produto tipoProduto;

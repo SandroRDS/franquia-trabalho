@@ -31,7 +31,7 @@ public class Franquia implements Pagamento {
 		this.taxaFranquia = taxaFranquia;
 	}
 	
-	//métodos de set e get 
+	// métodos de set e get 
 	public Franqueado getFranqueado() 
 	{
 		return franqueado;
@@ -94,12 +94,6 @@ public class Franquia implements Pagamento {
 		return this.receitaMensal - (this.obterTaxaFranquia() + this.custo);
 	}
 	
-	
-	public void contabilizarEstoque(int idProduto, int quantidade) 
-	{
-		
-	}
-	
 	//adiciona produtos a lista de produtos da franquia
 	public void adicionarProduto(Produto produto) 
 	{
@@ -110,8 +104,23 @@ public class Franquia implements Pagamento {
 	public void mostrarProdutos() 
 	{
 	    for (Produto produto : produtos) {
-	        System.out.println(produto);
+	    	System.out.println("\n");
+	        System.out.println("Nome......................" + produto.getNome());
+	        System.out.println("Categoria................." + produto.getCategoria());
+	        System.out.println("Preço....................." + produto.getPreco());
+	        System.out.println("Quantidade em Estoque....." + produto.getQuantidade());
+	        System.out.println("\n");
 	    }
+	}
+	
+	//aumenta a quantidade de um produto em estoque
+	public void contabilizarEstoque(int idProduto, int quantidade) 
+	{
+		for (Produto produto : this.produtos) {
+			if (produto.hashCode() == idProduto) {
+				produto.setQuantidade(produto.getQuantidade() + quantidade);
+			}
+		}
 	}
 	
 	//adiciona produtos a lista de pedidos da franquia
