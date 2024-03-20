@@ -28,10 +28,12 @@ public class Franqueador extends Pessoa {
 	}
 	
 	public void mostrarDadosPessoais() {
+		System.out.println("\n");
 		System.out.println("Nome............." + this.nome);
 		System.out.println("CNPJ............." + this.cnpj);
 		System.out.println("Razão Social....." + this.razaoSocial);
 		this.mostrarEnderecoContato();
+		System.out.println("\n");
 	}
 	
 	public void criarNovaFranquia() {

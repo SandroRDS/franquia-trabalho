@@ -103,14 +103,7 @@ public class Franquia implements Pagamento {
 	//mostra os produtos da lista
 	public void mostrarProdutos() 
 	{
-	    for (Produto produto : produtos) {
-	    	System.out.println("\n");
-	        System.out.println("Nome......................" + produto.getNome());
-	        System.out.println("Categoria................." + produto.getCategoria());
-	        System.out.println("Preço....................." + produto.getPreco());
-	        System.out.println("Quantidade em Estoque....." + produto.getQuantidade());
-	        System.out.println("\n");
-	    }
+	    for (Produto produto : produtos) produto.mostrarInformacoes();
 	}
 	
 	//aumenta a quantidade de um produto em estoque
@@ -131,9 +124,7 @@ public class Franquia implements Pagamento {
 	
 	//mostra os pedidos da lista de pedidos
 	public void mostrarPedidos() {
-	    for (Pedido pedido : pedidos) {
-	        System.out.println(pedido);
-	    }
+	    for (Pedido pedido : pedidos) pedido.mostrarInformacoes();
 	}
 	
 	//adicionar estoquistas a lista de estoquistas da franquia
@@ -145,10 +136,7 @@ public class Franquia implements Pagamento {
 	//mostra os estoquistas
 	public void mostrarEstoquistas()
 	{
-		for (Estoquista estoquista : estoquistas)
-		{
-			System.out.println(estoquista);
-		}
+		for (Estoquista estoquista : estoquistas) estoquista.mostrarDadosPessoais();
 	}
 	//retornar os produtos
 	public ArrayList<Produto> getProdutos() 

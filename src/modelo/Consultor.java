@@ -89,9 +89,11 @@ public class Consultor extends Funcionario {
 	public void mostrarDadosPessoais() {
 		DateTimeFormatter patternDataEntrada = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+		System.out.println("\n");
 		System.out.println("Nome................" + this.nome);
 		System.out.println("Salário............." + this.salario);
 		System.out.println("Data de Entrada....." + this.dataEntrada.format(patternDataEntrada));
 		super.mostrarEnderecoContato();
+		System.out.println("\n");
 	}
 }

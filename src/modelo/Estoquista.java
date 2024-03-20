@@ -1,47 +1,22 @@
 package modelo;
 
-public class Estoquista extends Funcionario {
-	
-	private Produto produtos;
-	private Franquia franquia;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-	public Estoquista(String nome, String contato, String endereco, double salario, String dataEntrada, Produto produtos, Franquia franquia) 
+public class Estoquista extends Funcionario {
+	public Estoquista(String nome, Contato contato, Endereco endereco, double salario, LocalDateTime dataEntrada) 
 	{
 		super(nome, contato, endereco, salario, dataEntrada);
-		this.produtos = produtos;
-		this.franquia = franquia;
 	}
 	
-	public Produto getProdutos() 
-	{
-		return produtos;
-	}
+	public void mostrarDadosPessoais() {
+		DateTimeFormatter patternDataEntrada = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
-	public void setProdutos(Produto produtos) 
-	{
-		this.produtos = produtos;
+		System.out.println("\n");
+		System.out.println("Nome do Estoquista....." + this.nome);
+		System.out.println("Salário................R$ " + this.salario);
+		System.out.println("Data de Entrada........" + this.dataEntrada.format(patternDataEntrada));
+		super.mostrarEnderecoContato();
+		System.out.println("\n");
 	}
-
-	public Franquia getFranquia() 
-	{
-		return franquia;
-	}
-
-	public void setFranquia(Franquia franquia) 
-	{
-		this.franquia = franquia;
-	}
-
-	/*public void gerenciarEstoque()
-	{
-		String pedidoFranquia = franquia.solicitarEstoque();
-		System.out.println("Recebimento de solicitação de estoque: "+pedidoFranquia);
-	}*/ 
-	//pensamos em criar um sistema para entrar com os dados no construtor
-	
-	public String organizarEntrega(String pedidoFranquia)
-	{
-		return "Pedido da Franquia: "+pedidoFranquia+"\nSolicitação de estoque da Franquia: "+franquia.getCodigo()+"\nEndereço: "+franquia.getEndereco();
-	}
-
 }

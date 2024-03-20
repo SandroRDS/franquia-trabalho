@@ -62,4 +62,13 @@ public class Produto {
 	{
 		this.quantidade = quantidade;
 	}
+	
+	public void mostrarInformacoes() {
+		System.out.println("\n");
+        System.out.println("Nome......................" + this.nome);
+        System.out.println("Categoria................." + this.categoria);
+        System.out.println("Preço....................." + this.preco);
+        System.out.println("Quantidade em Estoque....." + this.quantidade);
+        System.out.println("\n");
+	}
 }
